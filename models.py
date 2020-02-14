@@ -24,3 +24,7 @@ class Product(Base):
     price = Column(Float, default=0)
     category_id = Column(Integer, ForeignKey('category.id'))
     category = relationship('Category', back_populates='products')
+
+
+def get_categories_with_description(session):
+    return session.query(Category).filter(Category.description != None).all()

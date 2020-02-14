@@ -6,8 +6,7 @@ from models import Category, Product
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-
-# Create a user to test with
+#
 @app.before_first_request
 def create_user():
     init_db()
